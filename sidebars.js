@@ -43,6 +43,8 @@ const sidebars = {
       dirName: 'guides',
     },
   ],
+
+  myApiSidebar: require('./docs/petstore/sidebar'), // Hivatkozás a plugin által generált oldalsáv fájlra
   
 };
 

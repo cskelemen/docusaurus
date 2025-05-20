@@ -43,10 +43,11 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
+          docItemComponent: "@theme/ApiItem",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/cskelemen/docusaurus/tree/main/docs',
         },
         blog: {
           showReadingTime: true,
@@ -57,7 +58,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/cskelemen/docusaurus/tree/main/blog',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -70,13 +71,35 @@ const config = {
     ],
   ],
 
+  plugins: [
+    [
+      'docusaurus-plugin-openapi-docs',
+      {
+        id: 'openapi', // A plugin egyedi azonosítója
+        docsPluginId: 'classic',
+        config: {
+          petstore: {  // Egyedi azonosító az API doksinak
+            specPath: 'openapi/petstore-api.yaml', // Az OpenAPI fájl elérési útja
+            outputDir: 'docs/petstore', // A generált Markdown fájlok helye
+            sidebarOptions: {
+              groupPathsBy: 'tag',  // Csoportosítás tagek alapján az oldalsávban
+          // További opciók a plugin dokumentációja szerint
+            },
+            // Opcionális: downloadButton: true,
+          },
+        }
+      }
+    ]
+  ],
+  themes: ['docusaurus-theme-openapi-docs'],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'My Site',
+        title: 'Kelemen Csaba\'s site',
         logo: {
           alt: 'My Site Logo',
           src: 'img/logo.svg',
@@ -94,12 +117,21 @@ const config = {
 			position: 'left',
 			label: 'Guides',
 		 },
-         {to: '/blog', label: 'Blog', position: 'left'},
-          {
-            href: 'https://github.com/facebook/docusaurus',
+	     {
+			type: 'docSidebar', 
+			sidebarId: 'myApiSidebar',
+			position: 'left',
+			label: 'Petstore API',
+		 },
+         {  to: '/blog',
+		    label: 'Blog',
+			position: 'left'
+		 },
+         {
+            href: 'https://github.com/cskelemen/docusaurus',
             label: 'GitHub',
             position: 'right',
-          },
+         },
         ],
       },
       footer: {
@@ -111,6 +143,14 @@ const config = {
               {
                 label: 'Tutorial',
                 to: '/docs/tutorials/intro',
+              },
+              {
+                label: 'Guides',
+                to: '/docs/guides/installation-guide',
+              },
+              {
+                label: 'Petstore API',
+                to: '/docs/petstore/swagger-petstore-openapi-3-0',
               },
             ],
           },
@@ -140,7 +180,7 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/cskelemen/docusaurus',
               },
             ],
           },
