@@ -7,4 +7,4 @@ sidebar_position: 4
 
 Használd! 🤓
 
-Probléma esetén [itt](www.rossz.cim.com) kérhetsz segítséget!
+Probléma esetén [itt](https://www.docusaurus.io/community/support) kérhetsz segítséget!
