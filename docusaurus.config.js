@@ -16,7 +16,7 @@ const config = {
 
   // config for GitHub Pages:
   url: 'https://cskelemen.github.io/',
-  baseUrl: '/',
+  baseUrl: '/docusaurus/',
   organizationName: 'cskelemen',
   projectName: 'docusaurus',
 
