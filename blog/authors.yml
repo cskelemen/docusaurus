@@ -21,3 +21,12 @@ slorber:
     linkedin: sebastienlorber
     github: slorber
     newsletter: https://thisweekinreact.com
+
+cskelemen:
+  name: Csaba Kelemen
+  title: Junior Docusaurus User
+  url: https://github.com/cskelemen/docusaurus
+  image_url: https://raw.githubusercontent.com/cskelemen/docusaurus/refs/heads/main/static/img/docusaurus.png
+  page: true
+  socials:
+    github: cskelemen

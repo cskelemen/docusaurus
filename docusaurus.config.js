@@ -20,7 +20,7 @@ const config = {
   organizationName: 'cskelemen',
   projectName: 'docusaurus',
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
@@ -167,7 +167,7 @@ const config = {
             ],
           },
           {
-            title: 'More',
+            title: 'More and more',
             items: [
               {
                 label: 'Blog',
